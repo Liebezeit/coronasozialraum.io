@@ -21,7 +21,7 @@
 			  <li><a href="#Sozialraeume">Sozialräume</a></li>
 			  <li><a href="#MethodologieDatenquellen">Methodologie und Datenquellen</a></li>
 			  <li><a href="#InteraktiveKarte">Interaktive Karte</a></li>
-			  <li><a href="#AnalyseIndizien">Analyse und weitere Indizien</a></li>
+			  <li><a href="#WeitereDatenAnalysen">Analyse und weitere Indizien</a></li>
 			  <li><a href="#Impressum">Impressum</a></li>
 			</ul>
 
@@ -92,33 +92,27 @@
 							<li>Porz-Ost, Finkenberg, Gremberghoven und Eil</li>
 						</ul>
 						<br><br><br>
-						<img src="data/img/Bild6.JPG" title="Abbildung1">
+						<img src="data/img/Bild6.jpg" title="Abbildung1">
 						<p>
-						(Quelle: https://www.stadt-koeln.de/leben-in-koeln/soziales/lebenswerte-veedel)
+						(Quelle: <a href="https://www.stadt-koeln.de/leben-in-koeln/soziales/lebenswerte-veedel">https://www.stadt-koeln.de/leben-in-koeln/soziales/lebenswerte-veedel</a>)
 						</p>
 					</section>
 					<br><br><br>
 					<section id="MethodologieDatenquellen">
 						<h2>Methodologie und Datenquellen</h2>
-						<h3>Sozialraum-Layer:</h3>
 						<p>
 						Um die Sozialräume in einem geeigneten Geoinformationssystem zu erfassen, haben wir uns dem Werkzeug QGIS bedient. QQIS ist eine freie Geoinformationssoftware, welche es ermöglicht Karten anzulegen und diese unter verschiedenen Gesichtspunkten zu analysieren.
 						</p>
 						<p>
 						Um die Karte von Köln darzustellen, benötigen wir zunächst die Daten einer geeigneten Karte. Hierfür wird ein OpenStreetMap Layer geladen - OpenStreetMap.org ist ein im Jahre 2004 gegründetes internationales Projekt mit dem Ziel, eine freie Weltkarte zu erschaffen. Somit haben wir schon einmal die Karte für Köln. 
 						</p>
-						<p>
-						Als nächstes haben wir uns unter https://offenedaten-koeln.de/dataset/sozialräume-köln JSON-Daten der Sozialräume in Köln heruntergeladen. Damit haben wir erreicht, alle offiziell ausgewiesenen Sozialräume in Köln als einen Layer in unserer Karte abzugrenzen (diesen können Sie sich gerne im nächsten Abschnitt anzeigen lassen). 
-						</p>
-						<br><br><br>
-						<img class="abbildung" src="data/img/bild7.jpg" title="Abbildung2">
-						<br><br><br>
+						<br>
 						<h3>Corona-Fallzahlen:</h3>
 						<p>
-						Im nächsten Schritt haben wir über das Portal offenedate-koeln.de Daten zu Corona Infektionen verwendet, um Erkenntnisse über die Corona-Fallzahlen in den einzelnen Stadtteilen zu gewinnen. 
+						Zunächst haben wir das Portal offenedate-koeln.de verwendet, um Daten und Erkenntnisse über die Corona-Fallzahlen in den einzelnen Stadtteilen zu gewinnen.  
 						</p>
 						<p>
-						Unter https://www.offenedaten-koeln.de/dataset/corona-fallzahlen-koeln können diese ebenfalls als JSON-Datei heruntergeladen werden. Unser Datensatz entspricht dem Stand vom 30.11.2022. Dabei sind die Erklärungen der Attribute von uns übernommen worden.
+						Unter <a href="https://www.offenedaten-koeln.de/dataset/corona-fallzahlen-koeln">https://www.offenedaten-koeln.de/dataset/corona-fallzahlen-koeln </a> können diese ebenfalls als JSON-Datei heruntergeladen werden. Unser Datensatz entspricht dem Stand vom 30.11.2022. Dabei sind die Erklärungen der Attribute von uns übernommen worden.
 						</p>
 						<br>
 						<ul>
@@ -129,9 +123,10 @@
 							<li>einwohner: Einwohnerzahl des Stadtteils</li>
 							<li>stand: Stand der Daten</li>
 						</ul>
-						<br><br><br>
+						<br><br>
+						<h3>Kategorie Layer</h3>
 						<p>
-						Als nächstes haben wir einige Daten aus den „Kölner Stadtteilinformationen 2021“ (https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-standardinformationen/kölner_stadtteilinformationen_zahlen_2021.pdf ) zusammengetragen, um weitere Layer zu erstellen, welche es ermöglichen einen Überblick über die Verteilungen folgender Kategorien zu gewinnen:
+						Als nächstes haben wir einige Daten aus den „Kölner Stadtteilinformationen 2021“ (<a href="https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-standardinformationen/kölner_stadtteilinformationen_zahlen_2021.pdf">https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-standardinformationen/kölner_stadtteilinformationen_zahlen_2021.pdf</a> ) zusammengetragen, um weitere Layer zu erstellen, welche es ermöglichen einen Überblick über die Verteilungen folgender Kategorien zu gewinnen:
 						</p>
 						<ul>
 							<li>Altersdurchschnitt</li>
@@ -147,8 +142,24 @@
 						Außerdem haben wir uns per Feldrechner-Tool von QGIS eine Infektionsquote errechnet. Diese Bildet das Herzstück unserer Analyse, da sie Aufschluss über den Zusammenhang zwischen Infektionen und Einwohnerzahl einzelner „Veedel“ gibt.
 						</p>
 						<p>
-						Hierfür haben wir einfach die Corona-Fallzahlen-Daten verwendet. Wir haben die „anzahl_gesamt“ durch die „Einwohner“ der einzelnen Veedel geteilt, um eine Quote für jeden einzelenen Stadtteil zu errechnen. 
+						Hierfür haben wir einfach die Corona-Fallzahlen-Daten verwendet. Wir haben die „anzahl_gesamt“ durch die „Einwohner“ der einzelnen Veedel geteilt, um eine Quote für jeden einzelenen Stadtteil zu errechnen.
+						<br><br>
+						<h3>Sozialraum-Layer:</h3>
+						<p>
+						Als nächstes haben wir einen Layer für Sozialräume erstellt, um diese von den nicht-Sozialräumen abzugrenzen. 
+						Im Ersten Anlauf haben wir uns dafür die Daten für die Sozialraum Einteilung von <a href="https://offenedaten-koeln.de/dataset/sozialräume-köln">https://offenedaten-koeln.de/dataset/sozialräume-köln</a> als JSON-Datei heruntergeladen. Uns war jedoch aufgefallen, dass nicht alle Sozialräume die von der Stadt Köln gelistet waren in dieser JSON-Datei vertreten waren. Also haben wir uns anhand der Daten von der Stadt Köln einen eigenen Sozialraum Layer erstellt.
 						</p>
+						<p>
+						Wir sind vorgegangen indem wir unserem Basislayer von den Coronafallzahlen das Attribut Sozialraum hinzugefügt haben.
+						</p>
+						<p>
+						Mithilfe der offiziellen Auflistung der Sozialräume der Stadt Kölns (<a href="https://www.stadt-koeln.de/leben-in-koeln/soziales/lebenswerte-veedel">https://www.stadt-koeln.de/leben-in-koeln/soziales/lebenswerte-veedel</a>)) weisen wir jedem Sozialraum-Stadtteil eine 1 hinzu und allen anderen eine 0.
+						</p>
+						<p>
+						Wir extrahieren jeweils die Layer nach dem Sozialraum Attribut nach 0 und 1, sodass wir Sozialraum und Kein Sozialraum als Layer erhalten.
+						</p>
+						<br><br><br>
+						<img class="abbildung" src="data/img/Bild7.jpg" title="Abbildung2">
 						<br><br><br>
 					</section>
 					<section id="InteraktiveKarte">
@@ -207,7 +218,7 @@
 						<br><br>
 						<h3>Weitere Indizien und Quellen</h3>
 						<p>
-						Eine weitere Quelle die wir für den Abschluss dieser Arbeit nicht unberührt lassen möchten ist das Statistische Jahrbuch Köln aus dem Jahr 2020 (https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-jahrbuch/15_statistisches_jahrbuch_2020_bfrei.pdf)
+						Eine weitere Quelle die wir für den Abschluss dieser Arbeit nicht unberührt lassen möchten ist das Statistische Jahrbuch Köln aus dem Jahr 2020 (<a href="https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-jahrbuch/15_statistisches_jahrbuch_2020_bfrei.pdf">https://www.stadt-koeln.de/mediaasset/content/pdf15/statistik-jahrbuch/15_statistisches_jahrbuch_2020_bfrei.pdf</a>)
 						</p>
 						<p>
 						Da die Daten jedoch nicht zugänglich sind konnten wir diese nicht in unser Geoinformationssystem aufnehmen – wir sind jedoch der Meinung, dass auch diese eine Erwähnung wert sind und möchten bestimmte Abbildungen referenzieren, um einige unserer Argumente zu validieren oder um weitere Faktoren zu ergänzen.
@@ -225,17 +236,17 @@
 						Corona-Krise trifft Alleinerziehende besonders hart:
 						</p>
 						<p>
-						https://www.lvr.de/de/nav_main/derlvr/presse_1/pressemeldungen/press_report_270656.jsp
+						<a href="https://www.lvr.de/de/nav_main/derlvr/presse_1/pressemeldungen/press_report_270656.jsp">https://www.lvr.de/de/nav_main/derlvr/presse_1/pressemeldungen/press_report_270656.jsp</a>
 						</p>
 						<br>
 						<p>
 						Alleinerziehende fühlen sich häufiger krank:
 						</p>
 						<p>
-						https://www.spiegel.de/gesundheit/schwangerschaft/alleinerziehende-sind-haeufiger-krank-a-1127102.html
+						<a href="https://www.spiegel.de/gesundheit/schwangerschaft/alleinerziehende-sind-haeufiger-krank-a-1127102.html">https://www.spiegel.de/gesundheit/schwangerschaft/alleinerziehende-sind-haeufiger-krank-a-1127102.html </a>
 						</p>
 						<br><br>
-						<img class="table" src="data/img/Table5.jpg" title="Table5">
+						<img class="table" src="data/img/table5.jpg" title="Table5">
 						
 						<br><br>
 						<h4>Anzahl Einpersonenhaushalte</h4>
@@ -246,7 +257,7 @@
 						Einen weiteren Anhaltspunkt fanden wir in dieser Karte im statistischen Jahrbuch:
 						</p>
 						<br>
-						<img class="table" src="data/img/Table6.jpg" title="Table6">
+						<img class="table" src="data/img/table6.jpg" title="Table6">
 						<br>
 						<p>
 						Es ist deutlich erkennbar, dass sich die meisten Einpersonenhaushalte in der Innenstadt und somit in gut betuchteren Lagen befinden. Dies lässt sich auch gut mit unserem Geoinformationssystem darstellen. Der Layer „Haushaltsgröße“ macht Angaben die sich mit diesen Daten der Stadt Köln decken.
@@ -263,7 +274,7 @@
 						Leider gab es zu den Themen Bildung und Gehalt für die einzelnen Veedel in Köln keine gute Datenlagen. Wir haben im statistischen Jahrbuch jedoch folgende Grafik über Schuldabschlüsse gefunden, welche sich zumindest auf die 9 Stadtbezirke in Köln bezieht. Erwähnenswert bleibt, dass es im Lindenthal laut dieser statistik keinen Personen ohne Schulabschluss zu geben scheint, während in den Bezirken, die eher mit Sozialräumen in Verbindung gebracht werden (Chorweiler, Kalk, Porz, Mülheim) die Abiturientenquote sehr viel geringer ausfällt als in den übrigen Bezirken. Wir verstehen dies als ein Indiz für die erhöhten Infektionsquoten in Sozialräumen, da geringer qualifizierte und gebildete Menschen tendenziell schlechter bezahlten Jobs nachgehen, weshalb die Vermutung nahe liegt, dass diese Menschen weniger oft freiwillig in den Sozialräumen leben.
 						</p>
 						<br>
-						<img class="table" src="data/img/Table7.JPG" title="Table7">
+						<img class="table" src="data/img/table7.jpg" title="Table7">
 					</section>
 				</article>
 			</main> 
@@ -273,10 +284,8 @@
 				<article>
 					<section id="Impressum">
 						<h2>Impressum:</h2>
-						<p>Diese Projekt wurde von uns im Rahmen des Aufbaumoduls "Humanities Computing" des Studiengangs Informationsverarbeitung an der Universität zu Köln erstellt</p>
-						<p>Verantwortlich für dieses Projekt sind:</p>
-						<p>Dominik Liebezeit 2-Fach-Bachelor Erziehungswissenschaften/Informationsverarbeitung</p>
-						<p>Ben Musolff 2-Fach-Bachelor Geschichte/Informationsverarbeitung</p>
+						<p>Dominik Liebezeit</p>
+						<p>Ben Musolff</p>
 					</section>
 				</article>
 			</footer>
